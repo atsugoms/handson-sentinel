@@ -2,7 +2,10 @@
 
 ## 【目次】
 
-- Microsoft Defender 脅威インテリジェンス（MDTI）の利用
+- [Sentinel に コンテンツ を追加](#sentinel-に-コンテンツ-を追加)
+- [Microsoft Defender 脅威インテリジェンス を接続](#microsoft-defender-脅威インテリジェンス-を接続)
+- [取り込まれた脅威インテリジェンスの確認](#取り込まれた脅威インテリジェンスの確認)
+- [分析ルールの有効化](#分析ルールの有効化)
 
 
 ## Sentinel に コンテンツ を追加
