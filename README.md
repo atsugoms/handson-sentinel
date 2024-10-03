@@ -31,3 +31,6 @@
 <!-- 1. [環境準備](/docs/preparation01.md) -->
 1. [ハンズオン](/docs/README.md)
 
+## 参考
+
+- [Microsoft Sentinel Training Lab](https://github.com/Azure/Azure-Sentinel/blob/master/Solutions/Training/Azure-Sentinel-Training-Lab/README.md)
