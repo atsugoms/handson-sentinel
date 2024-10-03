@@ -1,4 +1,4 @@
-# Exercise91: 
+# Exercise01: Sentinel 利用環境の準備
 
 ## 【目次】
 
