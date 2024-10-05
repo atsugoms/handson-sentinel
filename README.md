@@ -6,7 +6,11 @@
 
 ## 目標
 
-本ハンズオンを通して、App Service , SQL Database の使用方法について学習します。
+Microsoft Sentinel に含まれる以下のような機能について学習します。
+- データコネクタ
+- 分析ルール
+- インシデント管理
+- ハンティング
 
 ## 対象
 
@@ -20,16 +24,23 @@
 
 ## 前提条件
 
-* ネットワーク知識
+Microsoft Sentinel トレーニング ラボを展開するには、Microsoft Azure サブスクリプションが必要です。
+既存の Azure サブスクリプションがない場合は、[こちら](https://azure.microsoft.com/free/) から無料試用版にサインアップできます。
 
 ## 目安時間
 
 120分
 
-## ハンズオン資料
+## ハンズオン 演習
 
-<!-- 1. [環境準備](/docs/preparation01.md) -->
-1. [ハンズオン](/docs/README.md)
+1. [Microsoft Sentinel 利用環境の準備](./docs/exercise01.md) (20分)
+1. [データコネクタ](./docs/exercise02.md) (15分)
+1. [分析ルール](./docs/exercise03.md) (30分)
+1. [インシデント管理](./docs/exercise04.md) (60分)
+1. [ハンティング](./docs/exercise05.md) (40分)
+1. [ウォッチリスト](./docs/exercise06.md) (20分)
+1. [脅威インテリジェンス](./docs/exercise07.md) (20分)
+
 
 ## 参考
 
