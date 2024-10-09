@@ -21,15 +21,25 @@ Azure アクティビティ コンテンツ ソリューションを既にイン
 
 1. [構成]-[分析] を開く
 
+    ![](./images/ex03-101.png)
+
 1. 「規則のテンプレート」タブへ遷移、「フィルターの追加」を選択して以下の条件でフィルタリング
 
     -  ソース名: `Azure Activity`
 
+    ![](./images/ex03-102.png)
+
 1. `Suspicious Resource deployment` を検索して開き、「ルールの作成」を選択
+
+    ![](./images/ex03-103.png)
+
+1. スケジュール済みクエリルールの作成
 
     1. 全般
 
         デフォルトまま
+
+        ![](./images/ex03-104.png)
 
     1. ルールのロジックを設定
 
@@ -39,13 +49,27 @@ Azure アクティビティ コンテンツ ソリューションを既にイン
         - 「クエリ結果の表示」を選択して、現在のクエリ動作確認ができることを確認
         - クエリのスケジュール設定を変更し、結果シミュレーションの「現在のデータでテストする」を選択することで
 
-    1. インシデントの設定 ～ 自動応答
+        ![](./images/ex03-105.png)
+
+    1. インシデントの設定
+
+        以下の操作ができることを確認
+
+        - アラートのグループ化: Sentinel によって検出されたすべてのアラートをインシデントに昇格させる必要はありません。特にノイズの多いアラートはグループ化によって抑止するよう設定します。
+
+        ![](./images/ex03-106.png)
+
+    1. 自動応答
 
         デフォルトまま
+
+        ![](./images/ex03-107.png)
 
     1. 確認と作成
 
         「保存」を選択
+
+        ![](./images/ex03-108.png)
 
 
 ## Microsoft Defender for Cloud の Microsoft インシデント作成ルールを有効化
@@ -61,7 +85,13 @@ Exercise2 では、 Microsoft Defender for Cloud コネクタを追加しまし�
 
 1. [構成]-[分析] を開く
 
+    ![](./images/ex03-201.png)
+
 1. 「作成」を開き、[Microsoft インシデントの作成規則] を選択
+
+    ![](./images/ex03-202.png)
+
+1. 分析ルールの作成
 
     1. 全般
 
@@ -71,13 +101,19 @@ Exercise2 では、 Microsoft Defender for Cloud コネクタを追加しまし�
         - Microsoft のセキュリティサービス: `Microsoft Defender for Cloud`
         - 重要度でフィルター: `カスタム` -> `中` と `高` を選択
 
+        ![](./images/ex03-203.png)
+
     1. 自動応答
 
         デフォルトまま
 
+        ![](./images/ex03-204.png)
+
     1. 確認と作成
 
         「保存」を選択
+
+        ![](./images/ex03-205.png)
 
 
 ## Fusionルール の確認（高度な多段階攻撃検出）
@@ -86,11 +122,19 @@ Fusion ルールを使用すると、Microsoft Sentinel は、キル チェー�
 
 1. [構成]-[分析] を開く
 
+    ![](./images/ex03-301.png)
+
 1. 「規則のテンプレート」タブへ移動し、「フィルターの追加」を選択して以下の条件でフィルタリング
 
     - ルールの種類: `Fusion`
 
+    ![](./images/ex03-302.png)
+
 1. `Advanced Multistage Attack Detection` を選択して右ペインで内容(利用するデータソース)を確認
+
+    Microsoft 365 Defender, Microsoft Defender for Endpoint, Identity, Office 365 など、複数のデータソースを元にインシデントを作成していることが確認できます。
+
+    ![](./images/ex03-303.png)
 
 
 ## Microsoft Sentinel カスタム分析ルールを作成する
@@ -130,21 +174,36 @@ Sentinel トレーニング ラボ コンテンツ パッケージでは、参�
 
     1. [全般]-[ログ] を開く
 
-    1. 以下のクエリを実行して Sentinel に取り込まれたアクティビティのリストを確認
+        ![](./images/ex03-401.png)
+
+    1. 以下のクエリを入力して「実行」、 Sentinel に取り込まれたアクティビティのリストを確認
+
+        クエリ入力できない場合、右上のモードを `KQLモード` に変更します。
 
         ```
         OfficeActivity_CL
         | distinct Operation_s
-        | sort by Operation_s asc ;
+        | sort by Operation_s asc;
         ```
+        ![](./images/ex03-402.png)
 
     1. `New-InboxRule` が取り込まれていることを確認
+
+        Exchange の "受信トレイルール 新規作成" のルールが取り込まれていることが確認できます。
+
+        ![](./images/ex03-403.png)
 
 1. スケジュール済クエリの作成
 
     1. [構成]-[分析] を開く
 
+        ![](./images/ex03-404.png)
+
     1. 「作成」を開き、「スケジュール済みクエリルール」を選択
+
+        ![](./images/ex03-405.png)
+
+    1. スケジュール済みクエリルールの作成
 
         1. 全般
 
@@ -153,6 +212,8 @@ Sentinel トレーニング ラボ コンテンツ パッケージでは、参�
             - 重要度: `中`
             - MITRE ATT&CK: `Persistence` と `Defense Evasion` を選択
             - 状態: `有効`
+
+            ![](./images/ex03-406.png)
 
         1. ルールのロジックを設定
 
@@ -179,6 +240,8 @@ Sentinel トレーニング ラボ コンテンツ パッケージでは、参�
                 | summarize count(), StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated) by  Operation_s, UserId__s, ClientIPAddress, ResultStatus_s, Keyword, OriginatingServer_s, OfficeObjectId_s, RuleDetail
                 ```
 
+                ![](./images/ex03-407a.png)
+
             - エンティティ マッピング
 
                 以下の新しいエンティティを追加
@@ -188,16 +251,22 @@ Sentinel トレーニング ラボ コンテンツ パッケージでは、参�
                 |アカウント|`FullName`|`UserId_s`|
                 |ホスト| `FullName` | `OriginatingServer_s` |
                 |IP| `Address` | `ClientIPAddress` |
+
+                ![](./images/ex03-407b.png)
             
             - アラートの詳細
 
                 - アラート名の形式: `Malicious Inbox Rule - {{UserId__s}}`
                 - アラートの説明の形式: (任意)
 
+                ![](./images/ex03-407c.png)
+
             - クエリのスケジュール設定
 
                 - クエリの実行間隔: `5分`
                 - 過去データの参照: `12時間`
+
+                ![](./images/ex03-407d.png)
 
         1. インシデントの設定 ～ 自動応答
 
@@ -207,6 +276,8 @@ Sentinel トレーニング ラボ コンテンツ パッケージでは、参�
 
             「保存」を選択
 
+            ![](./images/ex03-408.png)
+
 
 ## 発生したセキュリティインシデントを確認
 
@@ -214,9 +285,13 @@ Sentinel トレーニング ラボ コンテンツ パッケージでは、参�
 
 1. [脅威管理]-[インシデント] を開く
 
+    ![](./images/ex03-501.png)
+
 1. `Malicious Inbox Rule, affected user AdeleV@contoso.OnMicrosoft.com` などのタイトルのインシデントを検索、選択
 
     ユーザー名は影響を受けるユーザー名によって変化
+
+    ![](./images/ex03-502.png)
 
 1. 右側ペインでインシデントの概要を確認
 
@@ -232,7 +307,11 @@ Sentinel トレーニング ラボ コンテンツ パッケージでは、参�
     - インシデントリンク: インシデントへの直接リンク
     - 最新のコメント: インシデントにつけたコメント（存在する場合）
 
+    ![](./images/ex03-503.png)
+
 1. 「すべての詳細を表示」を開く
+
+    ![](./images/ex03-504.png)
 
 1. 完全なインシデント情報を確認
 
@@ -246,6 +325,8 @@ Sentinel トレーニング ラボ コンテンツ パッケージでは、参�
     - エンティティ タブ: 
         - 関連するエンティティを一覧。検索および詳細の確認が可能。
     
+    ![](./images/ex03-505.png)
+
 1. 「エンティティ」タブへ移動、 `AdeleV@contoso.OnMicrosoft.com` を選択
 
     各エンティティを選択するとより詳細な情報が取得可能です。
@@ -258,3 +339,6 @@ Sentinel トレーニング ラボ コンテンツ パッケージでは、参�
     - タイムライン: 関連するインシデントのタイムライン
     - 分析情報: 分析情報があれば表示
 
+    ![](./images/ex03-506.png)
+    
+    
