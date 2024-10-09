@@ -27,10 +27,6 @@ Microsoft Sentinel に含まれる以下のような機能について学習し�
 Microsoft Sentinel トレーニング ラボを展開するには、Microsoft Azure サブスクリプションが必要です。
 既存の Azure サブスクリプションがない場合は、[こちら](https://azure.microsoft.com/free/) から無料試用版にサインアップできます。
 
-## 目安時間
-
-120分
-
 ## ハンズオン 演習
 
 1. [Microsoft Sentinel 利用環境の準備](./docs/exercise01.md) (20分)
@@ -40,7 +36,6 @@ Microsoft Sentinel トレーニング ラボを展開するには、Microsoft Az
 1. [ハンティング](./docs/exercise05.md) (40分)
 1. [ウォッチリスト](./docs/exercise06.md) (20分)
 1. [脅威インテリジェンス](./docs/exercise07.md) (20分)
-
 
 ## 参考
 
