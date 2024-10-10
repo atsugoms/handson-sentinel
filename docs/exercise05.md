@@ -29,7 +29,7 @@
 
 1. [脅威管理]-[ハンティング] を開く
 
-    ![](./images/ex05-101.png)
+    ![](../images/ex05-101.png)
 
 1. 「クエリ」タブへ移動
 
@@ -57,24 +57,24 @@
         - **マイブックマーク** : <br />
             ハンティングプロセス中に作成されたブックマークの数が表示されます。
 
-    ![](./images/ex05-102.png)
+    ![](../images/ex05-102.png)
 
 1. 「フィルターの追加」を開き、以下のフィルター条件で絞り込み
 
     - 方法
         - `T1098: Account Manipulation`
 
-    ![](./images/ex05-103.png)
+    ![](../images/ex05-103.png)
 
 1. 表示されているクエリをすべて選択、上部アクションバーの「選択したクエリの実行」を選択
 
     `Adding credentials to legitimate OAuth Applications` クエリがいくつかの結果を返すことを確認
 
-    ![](./images/ex05-104.png)
+    ![](../images/ex05-104.png)
 
 1. `Adding credentials to legitimate OAuth Applications` クエリを選択、右ペインの「結果の表示」を開く
 
-    ![](./images/ex05-105.png)
+    ![](../images/ex05-105.png)
 
 1. ログ画面を確認
 
@@ -82,7 +82,7 @@
     ログ画面では、ハンティングクエリの実行結果の詳細について、解析されたすべての情報を確認できます。
     当該クエリ結果から、正規OAuthアプリに認証情報を追加する操作（ `Adding credentials to legitimate OAuth Applications` ）を実行したアクターIPとユーザー名がわかります。
 
-    ![](./images/ex05-106.png)
+    ![](../images/ex05-106.png)
 
 1. 結果の 1 つを展開、フィールドを確認
 
@@ -93,17 +93,17 @@
     - アクターのユーザー名(`InitiatingUserOrApp`)、IP(`InitiatingIpAddress`)
     - アクション(`OperationName`)
 
-    ![](./images/ex05-107.png)
+    ![](../images/ex05-107.png)
 
 当社のSOCアナリストは、上記の調査結果から、どのアプリケーションが重要で、セキュリティリスクがある状態なのかを把握する必要があります。
 これを行う 1 つの方法は、ハンティング結果から各アプリケーションの Microsoft Entra ID (MEID) を開き、それらのアクセス許可を確認し、リスクを検証することです。
 当社の SOC アナリストは、組織のナレッジ ベースに従って、すべての MEID アプリケーションのリストとそのリスク レベルを確認します。
 
-組織のナレッジ ベースには、MEID アプリケーション とそれに関連する リスクレベル の一覧を含む [CSV ファイル](./artifacts/HighRiskApps.csv) があります。
+組織のナレッジ ベースには、MEID アプリケーション とそれに関連する リスクレベル の一覧を含む [CSV ファイル](../artifacts/HighRiskApps.csv) があります。
 
 1. [構成]-[ウォッチリスト] を開き、上部メニュー「新規」を選択
 
-    ![](./images/ex05-108.png)
+    ![](../images/ex05-108.png)
 
 1. ウォッチリストの作成
 
@@ -113,29 +113,29 @@
         - 説明: `高リスクアプリケーション`
         - エイリアス: `HighRiskApps`
 
-        ![](./images/ex05-109a.png)
+        ![](../images/ex05-109a.png)
 
     1. ソース
 
         - ソースの種類: `ローカルファイル`
         - ファイルの種類: `ヘッダー付きCSVファイル(.csv)`
         - 見出しを含める行の前の行数: `0`
-        - ファイルのアップロード: [`HighRiskApps.csv`](./artifacts/HighRiskApps.csv) をドラッグ＆ドロップでアップロード
+        - ファイルのアップロード: [`HighRiskApps.csv`](../artifacts/HighRiskApps.csv) をドラッグ＆ドロップでアップロード
         - 検索行: `AppName`
 
-        ![](./images/ex05-109b.png)
+        ![](../images/ex05-109b.png)
 
     1. 確認と作成
 
         「作成」を選択
 
-        ![](./images/ex05-109c.png)
+        ![](../images/ex05-109c.png)
 
 1. 作成したウォッチリストを開き、右ペイン「ログに表示」を選択
 
     (*) 即時で反映しない（クエリの実行結果が得られない）場合があるので、反映しない場合はしばらく待ってから再実行を試してみます。
 
-    ![](./images/ex05-110.png)
+    ![](../images/ex05-110.png)
 
 1. 表示モードを `KQL モード` に切り替えて、ハンティングクエリとウォッチリストを結合したクエリを作成
 
@@ -195,7 +195,7 @@
     これら 2 つのデータセットは、アプリケーション名の列に基づいて結合しています。
     where演算子で結果をフィルタリングして、リスクの高いアプリケーションのみを表示します。
 
-    ![](./images/ex05-111.png)
+    ![](../images/ex05-111.png)
 
     **(*) このウィンドウは、次の演習で引き続き作業するため、開いたままにしてください。**
 
@@ -213,11 +213,11 @@ Log Analytics でクエリ結果を確認する際、Microsoft Sentinel のブ�
 
 1. ログ画面で、前の演習で作成した "結合ハンティング クエリ" を開く
 
-    ![](./images/ex05-201.png)
+    ![](../images/ex05-201.png)
 
 1. 表示された検索結果の行をすべて選択、アクションメニュー「ブックマークの追加」を選択
 
-    ![](./images/ex05-202.png)
+    ![](../images/ex05-202.png)
 
 1. ブックマークの追加
 
@@ -226,34 +226,34 @@ Log Analytics でクエリ結果を確認する際、Microsoft Sentinel のブ�
     - ブックマーク名: `victim@buildseccxpninja.onmicrosoft.com が高リスクアプリ purview-spn にキー追加`
     - タグ: `solorwinds`
 
-    ![](./images/ex05-203.png)
+    ![](../images/ex05-203.png)
 
 
 ## ブックマークをインシデントに昇格
 
 1. [脅威管理]-[ハンティング] を開き、「ブックマーク」タブへ移動
 
-    ![](./images/ex05-204.png)
+    ![](../images/ex05-204.png)
 
 1. 作成したブックマーク `victim@buildseccxpninja.onmicrosoft.com が高リスクアプリ purview-spn にキー追加` を選択、右ペインの「調査」を開く
 
-    ![](./images/ex05-205.png)
+    ![](../images/ex05-205.png)
 
 1. 調査画面
 
     グラフィカルな画面でインシデントの調査ができることを確認
 
-    ![](./images/ex05-206.png)
+    ![](../images/ex05-206.png)
 
 1. 右上「×」を選択して「ブックマーク」へ戻り、
     作成したブックマーク `victim@buildseccxpninja.onmicrosoft.com が高リスクアプリ purview-spn にキー追加` を選択
 
-    ![](./images/ex05-207.png)
+    ![](../images/ex05-207.png)
 
 
 1. 上部アクションメニュー [インシデントアクション]-[インシデントの作成] を開く
 
-    ![](./images/ex05-208.png)
+    ![](../images/ex05-208.png)
 
 1. インシデントの作成
 
@@ -266,25 +266,25 @@ Log Analytics でクエリ結果を確認する際、Microsoft Sentinel のブ�
         - 所有者: (自分を割り当て)
         - タグ: `solorwinds`
 
-        ![](./images/ex05-209a.png)
+        ![](../images/ex05-209a.png)
 
     1. ブックマーク
 
         デフォルトまま。
         元となるブックマークが追加されていることを確認。
 
-        ![](./images/ex05-209b.png)
+        ![](../images/ex05-209b.png)
 
     1. 確認と作成
 
         「作成」を選択
 
-        ![](./images/ex05-209c.png)
+        ![](../images/ex05-209c.png)
 
 1. [脅威管理]-[インシデント] を開く
 
     作成したインシデント `victim@buildseccxpninja.onmicrosoft.com が高リスクアプリ purview-spn にキー追加` があることを確認
 
-    ![](./images/ex05-210.png)
+    ![](../images/ex05-210.png)
 
 

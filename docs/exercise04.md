@@ -19,7 +19,7 @@ SOC アナリストとして、Sentinel でセキュリティ インシデント
 
 1. [脅威管理]-[インシデント] を開く
 
-    ![](./images/ex04-101.png)
+    ![](../images/ex04-101.png)
 
 1. インシデント一覧画面の機能確認
 
@@ -31,7 +31,7 @@ SOC アナリストとして、Sentinel でセキュリティ インシデント
         - 重大度
         - 状態　　…など
 
-    ![](./images/ex04-102.png)
+    ![](../images/ex04-102.png)
 
 1. インシデント担当者を設定
 
@@ -40,11 +40,11 @@ SOC アナリストとして、Sentinel でセキュリティ インシデント
 
     1. インシデント一覧ページにて、 `Sign-ins from IPs that attempt sign-ins to disabled accounts` を検索して選択
 
-        ![](./images/ex04-103.png)
+        ![](../images/ex04-103.png)
 
     1. インシデントの担当者を選択、「自分への割り当て」を選択、「適用」
 
-        ![](./images/ex04-104.png)
+        ![](../images/ex04-104.png)
 
 1. インシデント対応状況の確認
 
@@ -53,11 +53,11 @@ SOC アナリストとして、Sentinel でセキュリティ インシデント
 
     1. インシデント一覧ページ上部にある「セキュリティ効率ブック」を開く
 
-        ![](./images/ex04-105.png)
+        ![](../images/ex04-105.png)
 
     1. インシデントの発生状況、対応状況などを確認
 
-        ![](./images/ex04-106.png)
+        ![](../images/ex04-106.png)
 
 
 ## インシデント「無効なアカウントに対するサインイン試行」の対応
@@ -68,27 +68,27 @@ SOC アナリストとして、Sentinel でセキュリティ インシデント
 
 1. [脅威管理]-[インシデント] を開き、`Sign-ins from IPs that attempt sign-ins to disabled accounts` を検索して選択
 
-    ![](./images/ex04-201.png)
+    ![](../images/ex04-201.png)
 
 1. 右ペインから所有者を取得し、状態をアクティブに変更
 
     1. 「所有者」を開き「自分への割り当て」を選択して「適用」
 
-        ![](./images/ex04-202.png)
+        ![](../images/ex04-202.png)
 
     1. 「状態」を開き「アクティブ」を選択して「適用」
 
-        ![](./images/ex04-203.png)
+        ![](../images/ex04-203.png)
 
 1. 右ペインの「すべての詳細を表示」を開く
 
-    ![](./images/ex04-204.png)
+    ![](../images/ex04-204.png)
 
 1. 「概要」の「インシデントのタイムライン」から最新インシデントを選択、「イベント」にある「LA (Log Analytics) にリンク」を開く
 
     ログが検索され、インシデントと判断されたログを確認
 
-    ![](./images/ex04-205.png)
+    ![](../images/ex04-205.png)
 
 1. ログパネルで以下の情報を確認
 
@@ -97,15 +97,15 @@ SOC アナリストとして、Sentinel でセキュリティ インシデント
     - IPAddress
     - disabledAccountSet
 
-    ![](./images/ex04-206.png)
+    ![](../images/ex04-206.png)
 
 1. 「完了」を選択してログパネルを閉じる
 
-    ![](./images/ex04-207.png)
+    ![](../images/ex04-207.png)
 
 1. 「概要」の「エンティティ」に先ほど確認した IPアドレス ( `175.45.176.99` ) があることを確認、選択
 
-    ![](./images/ex04-208.png)
+    ![](../images/ex04-208.png)
 
 1. IPアドレスの詳細情報を確認
 
@@ -113,7 +113,7 @@ SOC アナリストとして、Sentinel でセキュリティ インシデント
         - Country: Korea (North) (北朝鮮)
         - City: Pyeongyang (平壌)
 
-    ![](./images/ex04-209.png)
+    ![](../images/ex04-209.png)
 
 これらの情報から北朝鮮から不正アクセスがあったことがわかります。
 
@@ -127,11 +127,11 @@ SOC アナリストとして、地理情報から不正アクセスの懸念が�
 
 1. [脅威管理]-[ブック] を開く
 
-    ![](./images/ex04-210.png)
+    ![](../images/ex04-210.png)
 
 1. 「マイ ブック」タブを開き、 `Investigation Insights` を選択、右ペインから「保存されたブックの表示」を開く
 
-    ![](./images/ex04-211.png)
+    ![](../images/ex04-211.png)
 
 1. 上部プロパティの設定を確認
 
@@ -139,17 +139,17 @@ SOC アナリストとして、地理情報から不正アクセスの懸念が�
     - Workspace: (今回の演習用に作成した Log Analytics Workspace)
     - TimeRange: (演習用の Log Analytics Workspace を作成した日が含まれる期間)
 
-    ![](./images/ex04-212.png)
+    ![](../images/ex04-212.png)
 
 1. 下へスクロールして「Entity Insights」の「Investigate IP Address」に調査で判明したアクセス元IPアドレス `175.45.176.99` を入力
 
-    ![](./images/ex04-213.png)
+    ![](../images/ex04-213.png)
 
 1. 下へスクロールして「Activity Detail」を確認
 
     このIPから `adelev@m365x816222.onmicrosoft.com` に対する複数のログイン試行があったことがわかります。
 
-    ![](./images/ex04-214.png)
+    ![](../images/ex04-214.png)
 
 1. ユーザー ID `adelev@m365x816222.onmicrosoft.com` の調査 ...
 
@@ -167,11 +167,11 @@ SOC マネージャーは、テストの実行中にこの IP からのインシ
 
 1. [脅威管理]-[インシデント] を開く
 
-    ![](./images/ex04-215.png)
+    ![](../images/ex04-215.png)
 
 1. `Sign-ins from IPs that attempt sign-ins to disabled accounts` を検索して選択、右ペイン [操作]-[オートメーション ルールの作成] を選択
 
-    ![](./images/ex04-216.png)
+    ![](../images/ex04-216.png)
 
 1. オートメーション ルールの作成
 
@@ -194,7 +194,7 @@ SOC マネージャーは、テストの実行中にこの IP からのインシ
         - 48時間後に設定 ★←ここを修正★
     - 状態: `有効`
 
-    ![](./images/ex04-217.png)
+    ![](../images/ex04-217.png)
 
 1. インシデントへ戻り、右ペイン「状態」を開き、ステータス変更してインシデントを閉じる
 
@@ -207,7 +207,7 @@ SOC マネージャーは、テストの実行中にこの IP からのインシ
     - 分類: `無害な陽性`
     - コメント: `Security Red Team による演習`
 
-    ![](./images/ex04-218.png)
+    ![](../images/ex04-218.png)
 
 
 ## インシデント「Solorigate ネットワーク ビーコン」の対応
@@ -228,30 +228,30 @@ SOC アナリストが Sentinel を使用して達成できるいくつかのこ
 
 1. [脅威管理]-[インシデント] を開く
 
-    ![](./images/ex04-301.png)
+    ![](../images/ex04-301.png)
 
 1. `Solorigate Network Beacon` を検索して選択
 
-    ![](./images/ex04-302.png)
+    ![](../images/ex04-302.png)
 
 1. 右ペインで担当を自分に変更して「適用」を選択
 
-    ![](./images/ex04-303.png)
+    ![](../images/ex04-303.png)
 
 1. 右ペインの「説明」を確認
 
     Solorigate 攻撃に関連するドメイン IOC の 1 つが見つかりました。
     このケースでは、ドメイン `avsvmcloud.com` が関係しています。
 
-    ![](./images/ex04-304.png)
+    ![](../images/ex04-304.png)
 
 1. 右ペインの「すべての詳細を表示」を開く
 
-    ![](./images/ex04-305.png)
+    ![](../images/ex04-305.png)
 
 1. 「概要」にある「インシデントのタイムライン」から任意のインシデントを選択、「LAへのリンク」を開く
 
-    ![](./images/ex04-306.png)
+    ![](../images/ex04-306.png)
 
 1. インシデントの元となったログを確認
 
@@ -260,7 +260,7 @@ SOC アナリストが Sentinel を使用して達成できるいくつかのこ
     任意の DNS ソースからのイベントが EventProduct や EventVender などに正規化されています。
     詳細については [ASIM](https://learn.microsoft.com/azure/sentinel/normalization) と [DNS スキーマ](https://learn.microsoft.com/azure/sentinel/normalization-schema-dns) を参照してください。
 
-    ![](./images/ex04-307.png)
+    ![](../images/ex04-307.png)
 
 
 #### 追加調査
@@ -272,26 +272,26 @@ SOC アナリストが Sentinel を使用して達成できるいくつかのこ
 
 1. [脅威管理]-[ハンティング] を開き、「クエリ」タブへ移動
 
-    ![](./images/ex04-308.png)
+    ![](../images/ex04-308.png)
 
 1. `Solorigate Inventory check` を探して選択、右ペインから「クエリの実行」を押下
 
-    ![](./images/ex04-309.png)
+    ![](../images/ex04-309.png)
 
 1. ハンティング一覧の「結果」または右ペイン上部の「結果」に数値 (`3`) が出ていることを確認し、右ペインから「結果の表示」を押下
 
-    ![](./images/ex04-310.png)
+    ![](../images/ex04-310.png)
 
 1. ログペインの内容を確認
 
     ご覧のとおり、ClientPC のほかに、
     悪意のある DLL と名前付きパイプが見つかったコンピュータが 2 台あります。
 
-    ![](./images/ex04-311.png)
+    ![](../images/ex04-311.png)
 
 1. レコード3行を選択し、「ブックマークの追加」を選択
 
-    ![](./images/ex04-312.png)
+    ![](../images/ex04-312.png)
 
 1. ブックマークの作成
 
@@ -303,23 +303,23 @@ SOC アナリストが Sentinel を使用して達成できるいくつかのこ
         - `アカウント`: `FullName` `AccountCustomEntity`
         - `ホスト`: `FullName` `HostCustomEntity`
 
-    ![](./images/ex04-313.png)
+    ![](../images/ex04-313.png)
 
 1. 右上「×」を選択して、[脅威管理]-[ハンティング] に戻る
 
-    ![](./images/ex04-314.png)
+    ![](../images/ex04-314.png)
 
 1. 「ブックマーク」タブへ移動
 
-    ![](./images/ex04-315.png)
+    ![](../images/ex04-315.png)
 
 1. ブックマークした3件を選択し、上部メニュー [インシデントアクション]-[既存のインシデントに追加] を選択
 
-    ![](./images/ex04-316.png)
+    ![](../images/ex04-316.png)
 
 1. リストから自分に割り当てられている Solorigate インシデント を選択、「追加」を押下
 
-    ![](./images/ex04-317.png)
+    ![](../images/ex04-317.png)
 
 
 この時点で、運用チームに依頼し、このインシデントの影響を受けたホストを隔離します。
@@ -334,23 +334,23 @@ Note: 実際のSOCでは、この手順はPlaybookを使用して自動化でき
 
 1. [脅威管理]-[インシデント] を開く
 
-    ![](./images/ex04-318.png)
+    ![](../images/ex04-318.png)
 
 1. `Solorigate Network Beacon` インシデントを選択、「すべての詳細を表示」を開く
 
-    ![](./images/ex04-319.png)
+    ![](../images/ex04-319.png)
    
 1. 関連する IPアドレス (`17.81.146.1`) をコピー
 
-    ![](./images/ex04-320.png)
+    ![](../images/ex04-320.png)
 
 1. [脅威管理]-[脅威インテリジェンス] へ移動
 
-    ![](./images/ex04-321.png)
+    ![](../images/ex04-321.png)
 
 1. 上部メニュー「新規追加」を選択
 
-    ![](./images/ex04-322.png)
+    ![](../images/ex04-322.png)
 
 1. 新しいインジケーターの作成
 
@@ -368,7 +368,7 @@ Note: 実際のSOCでは、この手順はPlaybookを使用して自動化でき
     - 有効期限: (2ヶ月後)
     - 作成者: (自分のアカウント)
 
-    ![](./images/ex04-323.png)
+    ![](../images/ex04-323.png)
 
 
 #### インシデントの引き渡し
@@ -378,15 +378,15 @@ Note: 実際のSOCでは、この手順はPlaybookを使用して自動化でき
 
 1. [脅威管理]-[インシデント] へ移動
 
-    ![](./images/ex04-324.png)
+    ![](../images/ex04-324.png)
 
 1. `Solorigate Network Beacon` インシデントを選択、「すべての詳細を表示」を開く
 
-    ![](./images/ex04-325.png)
+    ![](../images/ex04-325.png)
 
 1. 上部メニュー「アクティビティログ」を開く
 
-    ![](./images/ex04-326.png)
+    ![](../images/ex04-326.png)
 
 1. 右ペイン下部のコメント欄に実行したことを記載して「コメント」を選択
 
@@ -400,7 +400,7 @@ Note: 実際のSOCでは、この手順はPlaybookを使用して自動化でき
     6. 隔離のためオペレーション・チームに引き渡し
     ```
 
-    ![](./images/ex04-327.png)
+    ![](../images/ex04-327.png)
 
 この時点で、インシデントを適切なチームに引き継ぎます。
 インシデントを引き継ぐためには、次のような操作が実行できます。

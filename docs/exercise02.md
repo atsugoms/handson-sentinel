@@ -19,23 +19,23 @@ Azure アクティビティ データ コネクタを有効にする方法を解
 
 1. [コンテンツ管理]-[コンテンツハブ] を開く
 
-    ![](./images/ex02-101.png)
+    ![](../images/ex02-101.png)
 
 1. `Azure Activity` を検索して選択、「インストール」を実行
 
-    ![](./images/ex02-102.png)
+    ![](../images/ex02-102.png)
 
 1. [構成]-[データコネクタ] を開く
 
-    ![](./images/ex02-103.png)
+    ![](../images/ex02-103.png)
 
 1. `Azure Activity` を選択、「コネクターページを開く」を選択
 
-    ![](./images/ex02-104.png)
+    ![](../images/ex02-104.png)
 
 1. 「手順」を下へスクロールして「構成」にある「[Azure Policy の割り当て]ウィザードの起動」を選択
 
-    ![](./images/ex02-105.png)
+    ![](../images/ex02-105.png)
 
 1. ポリシーの割り当て
 
@@ -43,19 +43,19 @@ Azure アクティビティ データ コネクタを有効にする方法を解
 
         - スコープ: (ご自身のサブスクリプションを選択)
 
-        ![](./images/ex02-106.png)
+        ![](../images/ex02-106.png)
 
     1. 詳細
 
         デフォルトまま
 
-        ![](./images/ex02-107.png)
+        ![](../images/ex02-107.png)
 
     1. パラメーター
 
         - プライマリ Log Analytics ワークスペース: (今回のハンズオン用に作成したワークスペース)
 
-        ![](./images/ex02-108.png)
+        ![](../images/ex02-108.png)
 
     1. 修復
 
@@ -65,23 +65,23 @@ Azure アクティビティ データ コネクタを有効にする方法を解
             - マネージドID の種類: `システム割り当て`
             - システム割り当てIDの場所: (Log Analytics ワークスペースと同じ場所)
 
-        ![](./images/ex02-109.png)
+        ![](../images/ex02-109.png)
 
     1. 非準拠メッセージ
 
         デフォルトまま
 
-        ![](./images/ex02-110.png)
+        ![](../images/ex02-110.png)
 
     1. 確認および作成
 
         「作成」を選択
 
-        ![](./images/ex02-111.png)
+        ![](../images/ex02-111.png)
 
 1. [コンテンツ管理]-[コンテンツハブ] を開き、`Azure Activity` を検索して選択、「管理」を開く
 
-    ![](./images/ex02-112.png)
+    ![](../images/ex02-112.png)
 
 1. 管理ビューを確認
 
@@ -89,7 +89,7 @@ Azure アクティビティ データ コネクタを有効にする方法を解
     ソリューション パックに含まれるコネクタ、分析ルール、ワークブック、ハンティング クエリ、その他のコンテンツがここに表示されます。
     これらがインストールされると、それぞれが Sentinel インターフェイスの関連セクションに表示されます (分析ルール テンプレート、ワークブック テンプレートなど)。
 
-    ![](./images/ex02-113.png)
+    ![](../images/ex02-113.png)
 
 
 ## Microsoft Defender for Cloud データ コネクタ を有効化
@@ -104,19 +104,19 @@ Microsoft Defender for Cloud データ コネクタを有効にする方法を�
 
 1. [コンテンツ管理]-[コンテンツハブ] を開き、`Microsoft Defender for Cloud` を検索して選択、「インストール」を実行
 
-    ![](./images/ex02-201.png)
+    ![](../images/ex02-201.png)
 
 1. デプロイが完了したら「管理」を開く
 
-    ![](./images/ex02-202.png)
+    ![](../images/ex02-202.png)
 
 1. `Subscription-based Microsoft Defender for Cloud` のデータコネクタを選択、「コネクタページを開く」を押下
 
-    ![](./images/ex02-203.png)
+    ![](../images/ex02-203.png)
 
 1. 「構成」の「サブスクリプション」リストから、演習で利用するサブスクリプションを選択し、「接続」を選択
 
-    ![](./images/ex02-204.png)
+    ![](../images/ex02-204.png)
 
 
 ## Microsoft Defender 脅威インテリジェンス コネクタを有効化
@@ -127,17 +127,17 @@ MDTI は、一連のインジケーターと https://ti.defender.microsoft.com �
 
 1. [コンテンツ管理]-[コンテンツハブ] を開き、`Threat Intelligence` を検索して選択、「インストール」を実行
 
-    ![](./images/ex02-301.png)
+    ![](../images/ex02-301.png)
 
 1. デプロイが完了したら「管理」を開く
 
-    ![](./images/ex02-302.png)
+    ![](../images/ex02-302.png)
 
 1. `Microsoft Defender Threat Intelligence` のデータコネクタを選択、「コネクタページを開く」を押下
 
-    ![](./images/ex02-303.png)
+    ![](../images/ex02-303.png)
 
 1. 「接続」を選択
 
-    ![](./images/ex02-304.png)
+    ![](../images/ex02-304.png)
 
