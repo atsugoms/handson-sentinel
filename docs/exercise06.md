@@ -34,7 +34,7 @@
         - ソースの種類: `ローカルファイル`
         - ファイルの種類: `ヘッダー付きCSVファイル(.csv)`
         - 見出しを含む行の前の行数: `0`
-        - ファイルのアップロード: "[PenTestIPAddresses.csv](./PenTestIPAddresses.csv)" ダウンロードしてエリアへドラッグ＆ドロップ
+        - ファイルのアップロード: "[PenTestIPAddresses.csv](./artifacts/PenTestIPAddresses.csv)" ダウンロードしてエリアへドラッグ＆ドロップ
         - SearchKey: `IPAddress`
 
         ![](./images/ex06-102b.png)
