@@ -1,5 +1,7 @@
 # Microsoft Sentinel Hands-on
 
+![logo](./images/sentinel-labs-logo.png)
+
 ## 目的
 
 本ハンズオンを通して Sentinel の各種機能について学びます。
