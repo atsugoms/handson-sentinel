@@ -10,7 +10,7 @@
 
 1. [Log Analytics Workspace 作成](#log-analytics-workspace-作成)
 1. [Microsoft Sentinel ワークスペース 作成](#microsoft-sentinel-ワークスペース-作成)
-1. [Sentinel Training ラボ のデプロイ](#sentinel-training-ラボ-のデプロイ)
+1. [Sentinel Training ラボ のデプロイ](#microsoft-sentinel-training-ラボ-のデプロイ)
 1. [Microsoft Sentinel プレイブックの構成](#microsoft-sentinel-プレイブックの構成)
 
 ## Log Analytics Workspace 作成
