@@ -126,17 +126,16 @@
 作成したリソースグループに対して以下の2つのロールを現在のユーザーに追加します。これらのロールは、Microsoft Sentinel のプレイブックで利用される API 接続を正常に動作させるために必要です。
 
 > [!TIP]  
-> 本作業では以下のロールを追加しますが、実際の運用環境では、必要な権限の原則に基づいて、適切なロールとメンバーを選択してください。
+> 本作業では以下のロールを **作業ユーザー(ご自身のアカウント)** に追加しますが、実際の運用環境では、必要な権限の原則に基づいて、適切なロールとメンバーを選択してください。
+> 
+> | スコープ | ロール |
+> |---|---|
+> | テナント | <ul><li>セキュリティ管理者 (Security Administrator)</li></ul> |
+> | サブスクリプション | <ul><li>所有者 (Owner)</li></ul> または <ul><li>ユーザーアクセス管理者 (User Access Administrator)</li><li>Sentinel共同作成者 (Microsoft Sentinel Contirubutor)</li></ul> |
+> | 作成したリソースグループ | <ul><li>Microsoft Sentinel Contributor (Microsoft Sentinel 共同作成者)</li><li>Microsoft Sentinel Automation Contributor (Microsoft Sentinel Automation 共同作成者)</li></ul> |
 >
-> 【スコープ】
-> - 作成したリソースグループ
-> 
-> 【ロール】
-> - Microsoft Sentinel Contributor (Microsoft Sentinel 共同作成者)
-> - Microsoft Sentinel Automation Contributor (Microsoft Sentinel Automation 共同作成者)
-> 
-> 【メンバー】
-> - 現在のユーザー(ご自身のアカウント)
+> (*) [Microsoft Sentinelの前提条件 | MS Learn](https://learn.microsoft.com/unified-secops/microsoft-sentinel-onboard#microsoft-sentinel-prerequisites)
+
 
 実際にロールを追加する手順は次の通りです。
 
