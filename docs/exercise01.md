@@ -130,7 +130,6 @@
 > 
 > | スコープ | ロール |
 > |---|---|
-> | テナント | <ul><li>セキュリティ管理者 (Security Administrator)</li></ul> |
 > | サブスクリプション | <ul><li>所有者 (Owner)</li></ul> または <ul><li>ユーザーアクセス管理者 (User Access Administrator)</li><li>Sentinel共同作成者 (Microsoft Sentinel Contirubutor)</li></ul> |
 > | 作成したリソースグループ | <ul><li>Microsoft Sentinel Contributor (Microsoft Sentinel 共同作成者)</li><li>Microsoft Sentinel Automation Contributor (Microsoft Sentinel Automation 共同作成者)</li></ul> |
 >
